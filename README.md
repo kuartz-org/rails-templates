@@ -2,7 +2,7 @@
 
 ## Features
 
-[x] Devise
+- [X] Devise
 
 ## Setup
 
