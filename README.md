@@ -26,4 +26,6 @@ rails new \
 - [ ] devise_invitable
 - [ ] User management
 - [ ] Clevercloud setup
+- [ ] Clevercloud S3 setup (option, default: false)
 - [ ] Sidekiq
+- [ ] Sidekiq scheduler (option, default: false)
