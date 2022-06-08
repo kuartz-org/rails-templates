@@ -46,10 +46,12 @@ inject_into_file "config/environments/development.rb",
   after: "config.action_mailer.perform_caching = false\n"
 
 inject_into_file "app/controllers/application_controller.rb",
-  "before_action :authenticate_user!\n",
+  "  before_action :authenticate_user!\n",
   after: "class ApplicationController < ActionController::Base\n"
 
 rails_command "db:migrate"
 
 say_status :info, "✅ Devise setup ok"
 # END DEVISE ==================================================================
+
+uncomment_lines "config/environments/production.rb", /config.force_ssl/

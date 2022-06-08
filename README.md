@@ -3,6 +3,7 @@
 ## Features
 
 - [X] Devise
+- [] Force SSL
 
 ## Setup
 
@@ -12,3 +13,17 @@ rails new \
   -m https://raw.githubusercontent.com/kuartz-org/rails-templates/master/default.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
+
+## TODO
+
+- [] Slim
+- [] Rspec
+- [] Rubocop
+- [] I18n
+- [] ViewComponent
+- [] Flash messages
+- [] Devise views
+- [] devise_invitable
+- [] User management
+- [] Clevercloud setup
+- [] Sidekiq
