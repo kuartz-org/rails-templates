@@ -3,7 +3,7 @@
 ## Features
 
 - [X] Devise
-- [] Force SSL
+- [X] Force SSL
 
 ## Setup
 
@@ -16,14 +16,14 @@ rails new \
 
 ## TODO
 
-- [] Slim
-- [] Rspec
-- [] Rubocop
-- [] I18n
-- [] ViewComponent
-- [] Flash messages
-- [] Devise views
-- [] devise_invitable
-- [] User management
-- [] Clevercloud setup
-- [] Sidekiq
+- [ ] Slim
+- [ ] Rspec
+- [ ] Rubocop
+- [ ] I18n
+- [ ] ViewComponent
+- [ ] Flash messages
+- [ ] Devise views
+- [ ] devise_invitable
+- [ ] User management
+- [ ] Clevercloud setup
+- [ ] Sidekiq
