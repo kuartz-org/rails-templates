@@ -5,6 +5,8 @@
 - [X] Slim
 - [X] Devise
 - [X] Force SSL
+- [X] Mailcatcher
+- [X] Rubocop
 
 ## Setup
 
@@ -20,9 +22,7 @@ rails new \
 
 ## TODO
 
-- [ ] Slim
 - [ ] Rspec
-- [ ] Rubocop
 - [ ] I18n
 - [ ] ViewComponent
 - [ ] Flash messages
@@ -33,3 +33,5 @@ rails new \
 - [ ] Clevercloud S3 setup (option, default: false)
 - [ ] Sidekiq
 - [ ] Sidekiq scheduler (option, default: false)
+- [ ] Tailwindcss config
+- [ ] Simpleform with tailwindcss

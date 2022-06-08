@@ -15,6 +15,7 @@ git commit: "-a -m 'Initial commit'"
 
 features = %i[
   before_setup
+  rubocop
   slim
   devise
   after_setup
