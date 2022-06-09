@@ -15,8 +15,9 @@ unused_gems.each do |unused_gem|
 end
 
 after_bundle do
+  apply "features/_copy_resources.rb"
+
   apply "features/_clean_gemfile.rb"
-  apply "features/_overmind.rb"
   apply "features/_fix_rubocop_offenses.rb"
 
   git :init

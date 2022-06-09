@@ -1,4 +1,5 @@
 gem "devise"
+gem "devise-i18n"
 rails_command "generate devise:install"
 rails_command "generate devise User first_name last_name"
 
@@ -27,4 +28,5 @@ gsub_file "config/initializers/devise.rb",
 
 
 rails_command "db:migrate"
-rails_command "generate devise:views"
+rails_command "generate devise:i18n:views"
+rails_command "generate devise:i18n:locale fr"

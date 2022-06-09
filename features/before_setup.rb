@@ -1,5 +1,7 @@
 run "gem install mailcatcher"
 
+gem 'rails-i18n', '~> 7.0.0'
+
 uncomment_lines "config/environments/production.rb", /config.force_ssl/
 
 application_config = <<-RUBY
