@@ -15,7 +15,8 @@ mkdir -p kuartz-org
 git clone git@github.com:kuartz-org/rails-templates.git kuartz-org/rails-templates
 
 rails new \
-  --database postgresql \
+  -T --database postgresql \
+  --css tailwind \
   -m kuartz-org/rails-templates/default.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```

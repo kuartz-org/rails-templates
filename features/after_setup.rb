@@ -26,11 +26,13 @@ after_bundle do
   gsub_file "Gemfile", /(^\n){2,}/, "\n"
 
   # Fix offenses
-  run "rubocop -A --only Style/StringLiterals"
-  run "rubocop -A --only Style/RedundantFetchBlock"
-  run "rubocop -A --only Style/ClassAndModuleChildren"
-  run "rubocop -A --only Style/FrozenStringLiteralComment"
+  run "rubocop -A --only 'Style/StringLiterals Style/ClassAndModuleChildren Style/FrozenStringLiteralComment'"
   run "rubocop -A --only Layout/EmptyLineAfterMagicComment"
+  gsub_file "config/puma.rb", 'fetch("RAILS_MAX_THREADS") { 5 }', 'fetch("RAILS_MAX_THREADS", 5)'
+  gsub_file "config/puma.rb", 'fetch("PORT") { 3000 }', 'fetch("PORT", 3000)'
+  gsub_file "config/puma.rb", 'fetch("RAILS_ENV") { "development" }', 'fetch("RAILS_ENV", "development")'
+  gsub_file "config/puma.rb", 'fetch("PIDFILE") { "tmp/pids/server.pid" }', 'fetch("PIDFILE", "tmp/pids/server.pid")'
+  run "rubocop -A --only Style/StringLiterals"
 
   git :init
   git add: '.'

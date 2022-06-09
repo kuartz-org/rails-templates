@@ -19,5 +19,12 @@ inject_into_class "app/controllers/application_controller.rb",
   "ApplicationController",
   "  before_action :authenticate_user!\n"
 
+gsub_file "config/initializers/devise.rb", /  # config.secret_key.*$\n/, ""
+gsub_file "config/initializers/devise.rb", /  # config.pepper.*$\n/, ""
+gsub_file "config/initializers/devise.rb",
+  /'please-change-me-at-config-initializers-devise@example.com'/,
+  "Rails.application.credentials.default_from_email"
+
+
 rails_command "db:migrate"
 rails_command "generate devise:views"
