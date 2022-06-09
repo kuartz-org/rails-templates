@@ -18,3 +18,8 @@ RUBY
 inject_into_file "config/application.rb",
   application_config,
   after: "# Configuration for the application, engines, and railties goes here.\n"
+
+gem_group :development, :test do
+  gem 'pry-byebug'
+  gem 'pry-rails'
+end

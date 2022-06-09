@@ -1,10 +1,3 @@
-# gem 'simple_form', github: 'heartcombo/simple_form'
-
-# gem_group :development, :test do
-#   gem 'pry-byebug'
-#   gem 'pry-rails'
-# end
-
 def source_paths
   [__dir__]
 end
@@ -17,6 +10,7 @@ features = %i[
   before_setup
   rubocop
   slim
+  simple_form
   devise
   after_setup
 ]
