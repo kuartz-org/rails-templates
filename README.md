@@ -8,6 +8,10 @@
 - [X] Mailcatcher
 - [X] Rubocop
 
+## Prerequisites
+
+- Overmind ([Installation guide](https://github.com/DarthSim/overmind#installation))
+
 ## Setup
 
 ```sh

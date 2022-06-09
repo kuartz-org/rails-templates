@@ -1,3 +1,5 @@
+run "gem install mailcatcher"
+
 uncomment_lines "config/environments/production.rb", /config.force_ssl/
 
 application_config = <<-RUBY
