@@ -20,13 +20,51 @@ inject_into_class "app/controllers/application_controller.rb",
   "ApplicationController",
   "  before_action :authenticate_user!\n"
 
+# Devise initializer
+turbo_failure_app = <<-RUBY
+
+class TurboFailureApp < Devise::FailureApp
+  def respond
+    if request_format == :turbo_stream
+      redirect
+    else
+      super
+    end
+  end
+
+  def skip_format?
+    %w[html turbo_stream */*].include? request_format.to_s
+  end
+end
+RUBY
+
+inject_into_file "config/initializers/devise.rb",
+  turbo_failure_app,
+  after: "# frozen_string_literal: true\n"
+
 gsub_file "config/initializers/devise.rb", /  # config.secret_key.*$\n/, ""
 gsub_file "config/initializers/devise.rb", /  # config.pepper.*$\n/, ""
+
 gsub_file "config/initializers/devise.rb",
   /'please-change-me-at-config-initializers-devise@example.com'/,
   "Rails.application.credentials.default_from_email"
 
+gsub_file "config/initializers/devise.rb", /^.*config.parent_controller.*$/,
+  '  config.parent_controller = "Users::DeviseController"'
+
+gsub_file "config/initializers/devise.rb", /^.*config.navigational_formats.*$/,
+  '  config.navigational_formats = ["*/*", :html, :turbo_stream]'
+
+uncomment_lines "config/initializers/devise.rb", /config.warden do \|manager\|/
+
+manager_config = <<-RUBY
+    manager.failure_app = TurboFailureApp
+  end
+RUBY
+
+inject_into_file "config/initializers/devise.rb",
+  manager_config,
+  after: "config.warden do |manager|\n"
 
 rails_command "db:migrate"
 rails_command "generate devise:i18n:views"
-rails_command "generate devise:i18n:locale fr"
