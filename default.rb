@@ -12,6 +12,7 @@ features = %i[
   slim
   simple_form
   devise
+  maintenance
   after_setup
 ]
 

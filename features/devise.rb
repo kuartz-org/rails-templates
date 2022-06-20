@@ -68,3 +68,14 @@ inject_into_file "config/initializers/devise.rb",
 
 rails_command "db:migrate"
 rails_command "generate devise:i18n:views"
+
+full_name_method = <<-RUBY
+
+  def full_name
+    "\#{first_name} \#{last_name}".strip.presence || email.match(/^[^@]+/).to_s
+  end
+RUBY
+
+inject_into_file "app/models/user.rb",
+  full_name_method,
+  before: "end"

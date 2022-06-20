@@ -1,3 +1,4 @@
+remove_file "app/javascript/controllers/sidebar_controller.js"
 remove_file "app/views/devise/sessions/new.html.erb"
 remove_file "app/views/devise/passwords/new.html.erb"
 remove_file "app/views/layouts/application.html.erb"

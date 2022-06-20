@@ -15,6 +15,8 @@ unused_gems.each do |unused_gem|
 end
 
 after_bundle do
+  run "importmap pin el-transition"
+
   apply "features/_copy_resources.rb"
 
   apply "features/_clean_gemfile.rb"
@@ -23,6 +25,8 @@ after_bundle do
   git :init
   git add: '.'
   git commit: "-a -m 'Complete setup from template'"
+
+  run 'EDITOR="code --wait" rails credentials:edit' if yes?("Setup fontawesome_url in credentials? (y/N)")
 
   say_status :info, "Setup complete 🚀"
 end
