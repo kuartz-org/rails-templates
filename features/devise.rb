@@ -72,7 +72,7 @@ rails_command "generate devise:i18n:views"
 full_name_method = <<-RUBY
 
   def full_name
-    "\#{first_name} \#{last_name}".strip.presence || email.match(/^[^@]+/).to_s
+    "\#{first_name&.capitalize} \#{last_name&.upcase}".strip.presence || email.match(/^[^@]+/).to_s.capitalize
   end
 RUBY
 

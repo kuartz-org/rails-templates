@@ -17,6 +17,7 @@ end
 after_bundle do
   run "importmap pin el-transition"
 
+  apply "features/_presented_method.rb"
   apply "features/_copy_resources.rb"
 
   apply "features/_clean_gemfile.rb"

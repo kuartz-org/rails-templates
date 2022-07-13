@@ -1,0 +1,5 @@
+= render BreadcrumbComponent.new(items: @breadcrumb_items, title: t(".title"))
+
+.md:flex.md:items-center.md:justify-between.mb-10.mt-2
+  .flex-1.min-w-0
+    h2.text-2xl.font-bold.leading-7.text-gray-900.sm:text-3xl.sm:truncate = t(".title")

@@ -1,4 +1,11 @@
 fr:
   maintenance:
-    index:
-      title: Maintenance
+    base:
+      index:
+        title: Maintenance
+    users:
+      index:
+        title: Utilisateurs
+        new: Ajouter un utilisateur
+      new:
+        title: Nouvel utilisateur
