@@ -4,6 +4,7 @@ class BreadcrumbComponent < ViewComponent::Base
   attr_reader :items, :title
 
   def initialize(items:, title:)
+    super
     @items = items
     @title = title
   end
