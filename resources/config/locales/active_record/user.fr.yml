@@ -5,3 +5,4 @@ fr:
     attributes:
       user:
         full_name: Nom complet
+        edit_link: ""

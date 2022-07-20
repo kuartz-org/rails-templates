@@ -9,4 +9,4 @@
              "font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2"\
              "focus:ring-offset-2 focus:ring-primary-500"
 
-= render TableComponent.new(model: User, columns: [:full_name, :email, :created_at], collection: @users)
+= render TableComponent.new(model: User, columns: [:full_name, :email, :created_at, :edit_link], collection: @users)
