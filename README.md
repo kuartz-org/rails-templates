@@ -4,9 +4,13 @@
 
 - [X] Slim
 - [X] Devise
+- [X] Devise views
 - [X] Force SSL
 - [X] Mailcatcher
 - [X] Rubocop
+- [X] Tailwindcss config
+- [X] Simpleform with tailwindcss
+- [X] Clevercloud setup
 
 ## Prerequisites
 
@@ -31,12 +35,8 @@ rails new \
 - [ ] I18n
 - [ ] ViewComponent
 - [ ] Flash messages
-- [ ] Devise views
 - [ ] devise_invitable
 - [ ] User management
-- [ ] Clevercloud setup
 - [ ] Clevercloud S3 setup (option, default: false)
 - [ ] Sidekiq
 - [ ] Sidekiq scheduler (option, default: false)
-- [ ] Tailwindcss config
-- [ ] Simpleform with tailwindcss

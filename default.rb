@@ -10,10 +10,10 @@ features = %i[
   before_setup
   rubocop
   clever_cloud
-  sidekiq
   slim
   simple_form
   devise
+  sidekiq
   maintenance
   view_component
   after_setup
