@@ -9,10 +9,13 @@ git commit: "-a -m 'Initial commit'"
 features = %i[
   before_setup
   rubocop
+  clever_cloud
+  sidekiq
   slim
   simple_form
   devise
   maintenance
+  view_component
   after_setup
 ]
 

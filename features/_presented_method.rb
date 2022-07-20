@@ -1,7 +1,7 @@
 presented_method = <<-RUBY
 
   def presented
-    "#{self.class.to_s}Presenter".constantize.new(self)
+    "\#{self.class.to_s}Presenter".constantize.new(self)
   end
 RUBY
 
