@@ -31,3 +31,7 @@ after_bundle do
 
   say_status :info, "Setup complete 🚀"
 end
+
+inject_into_file "config/environments/development.rb",
+  'Rails.application.routes.default_url_options = { host: "localhost", port: 3000 }\n\n',
+  before: "Rails.application.configure do"

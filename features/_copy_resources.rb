@@ -5,6 +5,7 @@ remove_file "app/views/devise/passwords/new.html.erb"
 remove_file "app/views/layouts/application.html.erb"
 remove_file "bin/dev"
 remove_file "config/tailwind.config.js"
+remove_file "config/routes.rb"
 remove_file "Procfile.dev"
 remove_file "README.md"
 

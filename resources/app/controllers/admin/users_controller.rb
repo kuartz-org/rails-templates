@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module Maintenance
+module Admin
   class UsersController < BaseController
     def index
-      @users = User.all.order(:last_name, :first_name)
+      @users = User.where.not(role: :maintainer).order(:last_name, :first_name)
       @breadcrumb_items = {
-        "maintenance.base.index.title": maintenance_path
+        "admin.base.index.title": admin_path
       }
     end
 
     def new
       @breadcrumb_items = {
-        "maintenance.base.index.title": maintenance_path,
-        "maintenance.users.index.title": maintenance_users_path
+        "admin.base.index.title": admin_path,
+        "admin.users.index.title": admin_users_path
       }
       @user = User.new
     end
 
     def edit
       @breadcrumb_items = {
-        "maintenance.base.index.title": maintenance_path,
-        "maintenance.users.index.title": maintenance_users_path
+        "admin.base.index.title": admin_path,
+        "admin.users.index.title": admin_users_path
       }
       @user = User.find(params[:id])
     end
@@ -28,7 +28,7 @@ module Maintenance
     def create
       User.invite!(user_params)
 
-      redirect_to maintenance_users_path
+      redirect_to admin_users_path
     end
 
     def update
@@ -37,7 +37,7 @@ module Maintenance
 
       @user.invite! if email_changed?
 
-      redirect_to maintenance_users_path
+      redirect_to admin_users_path
     end
 
     private
@@ -48,6 +48,10 @@ module Maintenance
 
     def user_params
       params.require(:user).permit(:email, :last_name, :first_name, :role)
+    end
+
+    def active_menu_link
+      admin_users_path
     end
   end
 end

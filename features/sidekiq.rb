@@ -36,19 +36,3 @@ sidekiq_config = <<-YML
 YML
 
 create_file "config/sidekiq.yml", sidekiq_config
-
-sidekiq_route = <<-RUBY
-# frozen_string_literal: true
-
-namespace :maintenance do
-  require "sidekiq/web"
-  authenticate :user, -> (user) { user.maintainer? } do
-    mount Sidekiq::Web => "/sidekiq"
-    resources :jobs, only: :index
-  end
-end
-RUBY
-
-create_file "config/routes/maintenance.rb", sidekiq_route
-
-route "draw :maintenance"

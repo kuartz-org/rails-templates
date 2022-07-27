@@ -17,6 +17,7 @@ features = %i[
   devise_invitable
   maintenance
   view_component
+  current
   after_setup
 ]
 

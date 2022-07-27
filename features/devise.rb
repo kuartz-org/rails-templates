@@ -2,13 +2,13 @@ gem "devise"
 gem "devise-i18n"
 rails_command "generate devise:install"
 rails_command "generate devise User first_name last_name"
-rails_command "generate migration AddRoleToUser"
+rails_command "generate migration AddRoleToUser role"
 
 add_role_to_user_migration = Dir.children(File.join(destination_root, "db/migrate")).find do |f|
   f.end_with? "add_role_to_user.rb"
 end
 
-gsub_file add_role_to_user_migration, /add_column :users, :role, :string/,
+gsub_file File.join(destination_root, "db/migrate", add_role_to_user_migration), /add_column :users, :role, :string/,
   "add_column :users, :role, :string, default: :default"
 
 action_mailer_config = <<-RUBY
@@ -98,5 +98,3 @@ inject_into_class "app/models/user.rb", "User" do
 
   RUBY
 end
-
-route "resource :profile, only: [:edit, :update], controller: :profile"

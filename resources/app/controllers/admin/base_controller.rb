@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Maintenance
+module Admin
   class BaseController < ApplicationController
     before_action :enforce_policy
 
@@ -10,11 +10,11 @@ module Maintenance
     private
 
     def enforce_policy
-      return head :forbidden unless MaintenancePolicy.role_can_access?
+      return head :forbidden unless AdminPolicy.role_can_access?
     end
 
     def active_menu_link
-      maintenance_path
+      admin_path
     end
   end
 end
