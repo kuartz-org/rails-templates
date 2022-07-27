@@ -12,8 +12,9 @@ features = %i[
   clever_cloud
   slim
   simple_form
-  devise
   sidekiq
+  devise
+  devise_invitable
   maintenance
   view_component
   after_setup

@@ -1,7 +1,7 @@
 nav.mt-10.flex-1.px-2.space-y-1
-  = render "sidebar/menu_link", title: "Dashboard", icon: "fa-house", active: true
-  = render "sidebar/menu_link", title: "Users", icon: "fa-user-group", active: false
-  = render "sidebar/menu_link", title: "Projects", icon: "fa-folder-open", active: false
-  = render "sidebar/menu_link", title: "Calendar", icon: "fa-calendar", active: false
-  = render "sidebar/menu_link", title: "Documents", icon: "fa-inbox", active: false
-  = render "sidebar/menu_link", title: "Reports", icon: "fa-chart-column", active: false
+  = render MenuLinkComponent.new(title: "Dashboard", icon: "fa-house", path: root_path, active: true)
+  = render MenuLinkComponent.new(title: "Users", icon: "fa-user-group", path: "#")
+  = render MenuLinkComponent.new(title: "Projects", icon: "fa-folder-open", path: "#")
+  = render MenuLinkComponent.new(title: "Calendar", icon: "fa-calendar", path: "#")
+  = render MenuLinkComponent.new(title: "Documents", icon: "fa-inbox", path: "#")
+  = render MenuLinkComponent.new(title: "Reports", icon: "fa-chart-column", path: "#")

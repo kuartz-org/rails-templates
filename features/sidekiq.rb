@@ -44,6 +44,7 @@ namespace :maintenance do
   require "sidekiq/web"
   authenticate :user, -> (user) { user.maintainer? } do
     mount Sidekiq::Web => "/sidekiq"
+    resources :jobs, only: :index
   end
 end
 RUBY

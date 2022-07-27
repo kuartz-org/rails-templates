@@ -11,6 +11,11 @@
 - [X] Tailwindcss config
 - [X] Simpleform with tailwindcss
 - [X] Clevercloud setup
+- [X] ViewComponent
+- [X] devise_invitable
+- [X] User management
+- [X] Sidekiq
+- [X] I18n
 
 ## Prerequisites
 
@@ -32,11 +37,6 @@ rails new \
 ## TODO
 
 - [ ] Rspec
-- [ ] I18n
-- [ ] ViewComponent
 - [ ] Flash messages
-- [ ] devise_invitable
-- [ ] User management
 - [ ] Clevercloud S3 setup (option, default: false)
-- [ ] Sidekiq
 - [ ] Sidekiq scheduler (option, default: false)

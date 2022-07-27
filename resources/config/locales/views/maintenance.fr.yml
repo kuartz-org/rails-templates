@@ -5,7 +5,14 @@ fr:
         title: Maintenance
     users:
       index:
-        title: Utilisateurs
         new: Ajouter un utilisateur
+        title: Utilisateurs
       new:
         title: Nouvel utilisateur
+      edit:
+        title: Modifier l'utilisateur
+      form:
+        invite: Envoyer l'invitation
+    jobs:
+      index:
+        title: Jobs

@@ -2,11 +2,19 @@ gem "devise"
 gem "devise-i18n"
 rails_command "generate devise:install"
 rails_command "generate devise User first_name last_name"
+rails_command "generate migration AddRoleToUser"
+
+add_role_to_user_migration = Dir.children(File.join(destination_root, "db/migrate")).find do |f|
+  f.end_with? "add_role_to_user.rb"
+end
+
+gsub_file add_role_to_user_migration, /add_column :users, :role, :string/,
+  "add_column :users, :role, :string, default: :default"
 
 action_mailer_config = <<-RUBY
 
   # Config for mailcatcher
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { address: "127.0.0.1", port: 1025 }
   config.action_mailer.raise_delivery_errors = false
@@ -79,3 +87,16 @@ RUBY
 inject_into_file "app/models/user.rb",
   full_name_method,
   before: "end"
+
+inject_into_class "app/models/user.rb", "User" do
+  <<-RUBY
+  extend Enumerize
+
+  ROLES = %i[maintainer admin default].freeze
+
+  enumerize :role, in: ROLES, predicates: true
+
+  RUBY
+end
+
+route "resource :profile, only: [:edit, :update], controller: :profile"

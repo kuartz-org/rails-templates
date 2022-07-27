@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UserPresenter < SimpleDelegator
+class UserPresenter < ApplicationPresenter
   def created_at
     I18n.l(__getobj__.created_at, format: :short)
   end

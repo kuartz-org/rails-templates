@@ -27,7 +27,7 @@ after_bundle do
   git add: '.'
   git commit: "-a -m 'Complete setup from template'"
 
-  run 'EDITOR="code --wait" rails credentials:edit' if yes?("Setup fontawesome_url in credentials? (y/N)")
+  apply "features/_credentials.rb"
 
   say_status :info, "Setup complete 🚀"
 end
