@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root "profile#edit"
-
   devise_for :users
   devise_scope :user do
     unauthenticated { root to: "devise/sessions#new", as: :unauthenticated_root }
@@ -17,4 +15,6 @@ Rails.application.routes.draw do
       draw :admin
     end
   end
+
+  root "profile#edit"
 end

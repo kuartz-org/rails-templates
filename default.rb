@@ -15,7 +15,6 @@ features = %i[
   sidekiq
   devise
   devise_invitable
-  maintenance
   view_component
   current
   after_setup
