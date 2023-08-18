@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title <%= APP_NAME %>
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+    script src="https://kit.fontawesome.com/910f22a437.js" crossorigin="anonymous"
+  body
+    .fixed.w-full.top-0.z-10
+      = render Common::Layout::HeaderComponent.new(brand: "<%= APP_NAME %>")
+      = render Common::Layout::NavComponent.new do |nav|
+        - nav.with_links([{ href: root_path,
+              name: "Home",
+              active: current_page?(root_path) }])
+    main.container.mx-auto.mb-6.mt-24
+      = yield

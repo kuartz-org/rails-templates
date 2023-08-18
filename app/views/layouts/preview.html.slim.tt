@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Previews
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+    script src="https://kit.fontawesome.com/910f22a437.js" crossorigin="anonymous"
+  body.m-8
+    = yield
