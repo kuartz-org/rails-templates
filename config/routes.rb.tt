@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+
+Rails.application.routes.draw do
+  devise_for :users
+  devise_scope :user do
+    unauthenticated { root to: "devise/sessions#new", as: :unauthenticated_root }
+    resource :profile, only: :show, controller: :profile
+    root to: "profile#show"
+  end
+
+  if Rails.env.development?
+    mount Lookbook::Engine, at: "/lookbook"
+  end
+end

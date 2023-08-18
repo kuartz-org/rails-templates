@@ -2,7 +2,12 @@
 
 copy_file "config/sidekiq.yml"
 
+template "config/tailwind.config.js.tt"
+
 apply "config/application.rb"
 apply "config/environments/development.rb"
 apply "config/environments/production.rb"
-apply "config/tailwin_config.js.rb"
+
+after_bundle do
+  template "config/routes.rb", force: true
+end

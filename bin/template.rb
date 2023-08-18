@@ -1,2 +1,3 @@
-remove_file "bin/dev"
-copy_file "bin/dev"
+after_bundle do
+  template "bin/dev.tt", force: true
+end

@@ -9,8 +9,9 @@ end
 
 template "Gemfile.tt", force: true
 
-apply "config/template.rb"
 apply "bin/template.rb"
 apply "app/template.rb"
 
 apply "_addons/devise/template.rb"
+
+apply "config/template.rb"
