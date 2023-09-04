@@ -1,5 +1,10 @@
+# frozen_string_literal: true
+
 gem "devise"
 gem "devise-i18n"
+
+directory "_addons/devise/views/devise", "app/views/devise"
+template "_addons/devise/views/layouts/devise.html.slim.tt", "app/views/layouts/devise.html.slim"
 
 inject_into_class "app/controllers/application_controller.rb",
   "ApplicationController",

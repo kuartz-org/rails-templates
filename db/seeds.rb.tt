@@ -1,0 +1,4 @@
+# frozen_string_literal: true
+<% if DEVISE %>
+User.create!(email: "admin@example.com", first_name: "Admin", last_name: "User", password: "password")
+<% end %>

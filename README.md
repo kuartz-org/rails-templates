@@ -6,6 +6,7 @@
 - [X] Slim
 - [X] Enumerize
 - [X] ViewComponent
+- [X] Simple form
 - [X] Devise
 - [X] Sidekiq
 
