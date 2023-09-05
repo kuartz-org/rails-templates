@@ -15,12 +15,12 @@ apply "app/template.rb"
 
 apply "_addons/simple_form/template.rb"
 apply "_addons/devise/template.rb" if DEVISE
+apply "db/template.rb"
 
 apply "config/template.rb"
 
 after_bundle do
   rails_command "db:migrate"
-  apply "db/template.rb"
   rails_command "db:seed"
   rails_command "app:template LOCATION=../components_templates/template.rb"
 

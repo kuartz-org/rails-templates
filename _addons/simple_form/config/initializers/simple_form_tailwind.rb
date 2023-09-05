@@ -77,7 +77,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
     b.use :label, class: "block text-sm text-gray-900"
     b.wrapper :grid_wrapper, tag: "div" do |ba|
-      ba.use :input, class: "mr-2 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded",
+      ba.use :input, class: "mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded",
                      error_class: "is-invalid", valid_class: "is-valid"
       ba.use :full_error, wrap_with: { tag: "div", class: "invalid-feedback text-xs text-red-400" }
       ba.use :hint, wrap_with: { tag: "small", class: "text-gray-400" }
