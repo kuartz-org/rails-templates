@@ -1,0 +1,8 @@
+fr:
+  admin:
+    users:
+      index:
+        add_user: Inviter un utilisateur
+      new:
+        new_user: Nouvel utilisateur
+        invite_user: Inviter cet utilisateur

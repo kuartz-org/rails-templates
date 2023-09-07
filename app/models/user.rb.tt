@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+class User < ApplicationRecord
+  devise :invitable, :database_authenticatable, :recoverable, :rememberable, :validatable
+
+  validates :first_name, :last_name, presence: true
+
+
+  def full_name
+    "#{first_name&.capitalize} #{last_name&.upcase}".strip.presence || email
+  end
+end

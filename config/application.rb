@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-insert_into_file 'config/application.rb', before: /  end\nend\Z/ do
+insert_into_file "config/application.rb", before: /  end\nend\Z/ do
   <<~RUBY.indent(4)
 
     config.generators do |generate|

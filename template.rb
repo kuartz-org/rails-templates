@@ -14,6 +14,7 @@ template "Gemfile.tt", force: true
 apply "bin/template.rb"
 apply "app/template.rb"
 
+apply "_addons/modal/template.rb"
 apply "_addons/simple_form/template.rb"
 apply "_addons/devise/template.rb" if DEVISE
 apply "_addons/clever_cloud/template.rb" if CLEVER_CLOUD

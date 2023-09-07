@@ -1,0 +1,35 @@
+# frozen_string_literal: true
+
+class Admin::UsersController < ApplicationController
+  def index
+    @users = User.all
+    @user = User.new
+  end
+
+  def create
+    respond_to do |format|
+      if user_valid? && User.invite!(user_params)
+        format.turbo_stream do
+          redirect_to admin_users_path
+        end
+      else
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(@user, partial: "admin/users/new", locals: { user: @user })
+        end
+      end
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email)
+  end
+
+  def user_valid?
+    @user = User.new(user_params)
+    @user.valid?
+    @user.errors.delete(:password)
+    @user.errors.empty?
+  end
+end

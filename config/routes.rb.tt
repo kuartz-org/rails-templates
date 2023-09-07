@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   devise_scope :user do
     unauthenticated { root to: "devise/sessions#new", as: :unauthenticated_root }
     resource :profile, only: :show, controller: :profile
+
+    namespace :admin do
+      resources :users, only: [:index, :create]
+    end
+
     root to: "profile#show"
   end
 

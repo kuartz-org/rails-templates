@@ -1,0 +1,15 @@
+= simple_form_for [:admin, user] do |f|
+  .bg-white.py-6
+    .border-b.border-gray-900/10
+      .border-b.border-gray-200
+        .ml-4.mb-4
+          h3.text-base.font-semibold.leading-6.text-gray-900 = t(".new_user")
+
+      .mt-6.px-4
+        = f.input :first_name, input_html: { autofocus: true }
+        = f.input :last_name
+        = f.input :email
+
+    .mt-6.flex.flex-row-reverse.items-center.justify-end.gap-x-6.px-4
+      = render Common::Form::ButtonComponent.new(level: :primary).with_content(t(".invite_user"))
+      = render Common::ButtonTagComponent.new(data: { modal: "close" }).with_content(t("cancel"))

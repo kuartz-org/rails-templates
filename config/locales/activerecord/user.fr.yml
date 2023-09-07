@@ -1,0 +1,13 @@
+fr:
+  activerecord:
+    models:
+      user:
+        zero: Utilisateur
+        one: Utilisateur
+        other: Utilisateurs
+    attributes:
+      user:
+        email: Email
+        first_name: Prénom
+        full_name: Nom
+        last_name: Nom

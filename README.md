@@ -9,3 +9,5 @@
 - [X] Simple form
 - [X] Devise
 - [X] Sidekiq
+- [X] CleverCloud
+- [X] Modal
