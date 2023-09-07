@@ -26,8 +26,6 @@ gem "enumerize"
 gem "sidekiq"
 gem "sidekiq-failures", "~> 1.0"
 
-gem "sqlite3"
-
 group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
@@ -43,3 +41,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+<% if options[:database] == "sqlite3" %>
+gem "sqlite3"
+<% end %>

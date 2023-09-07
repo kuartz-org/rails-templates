@@ -7,6 +7,7 @@ def source_paths
 end
 
 DEVISE = true
+CLEVER_CLOUD = true
 
 template "Gemfile.tt", force: true
 
@@ -15,14 +16,19 @@ apply "app/template.rb"
 
 apply "_addons/simple_form/template.rb"
 apply "_addons/devise/template.rb" if DEVISE
-apply "db/template.rb"
+apply "_addons/clever_cloud/template.rb" if CLEVER_CLOUD
 
+apply "db/template.rb"
 apply "config/template.rb"
 
 after_bundle do
+  rails_command "db:create"
   rails_command "db:migrate"
   rails_command "db:seed"
   rails_command "app:template LOCATION=../components_templates/template.rb"
 
+  git :init
+  git add: '.'
+  git commit: "-a -m 'Complete setup from template'"
   say_status :info, "Setup complete 🚀"
 end

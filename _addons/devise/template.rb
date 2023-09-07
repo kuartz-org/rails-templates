@@ -2,6 +2,7 @@
 
 gem "devise"
 gem "devise-i18n"
+gem "devise_invitable"
 
 directory "_addons/devise/views/devise", "app/views/devise"
 template "_addons/devise/views/layouts/devise.html.slim.tt", "app/views/layouts/devise.html.slim"
@@ -12,5 +13,7 @@ inject_into_class "app/controllers/application_controller.rb",
 
 after_bundle do
   generate "devise:install"
-  rails_command "generate devise User first_name last_name"
+  generate "devise User first_name last_name"
+  generate "devise_invitable:install"
+  generate "devise_invitable User"
 end
