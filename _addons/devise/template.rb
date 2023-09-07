@@ -16,4 +16,5 @@ after_bundle do
   generate "devise User first_name last_name"
   generate "devise_invitable:install"
   generate "devise_invitable User"
+  template "_addons/devise/models/user.rb", "app/models/user.rb", force: true
 end
