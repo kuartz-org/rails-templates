@@ -10,6 +10,7 @@ DEVISE = true
 CLEVER_CLOUD = true
 
 template "Gemfile.tt", force: true
+template "Procfile.dev.tt", force: true
 
 apply "bin/template.rb"
 apply "app/template.rb"

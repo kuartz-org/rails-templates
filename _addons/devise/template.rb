@@ -13,7 +13,7 @@ inject_into_class "app/controllers/application_controller.rb",
 
 after_bundle do
   generate "devise:install"
-  generate "devise User first_name last_name"
+  generate "devise User first_name last_name role"
   generate "devise_invitable:install"
   generate "devise_invitable User"
   template "_addons/devise/models/user.rb", "app/models/user.rb", force: true

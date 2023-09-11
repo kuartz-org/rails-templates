@@ -11,4 +11,5 @@ html
     script src="https://kit.fontawesome.com/910f22a437.js" crossorigin="anonymous"
   body.p-10
     main.container.mx-auto.w-full.max-w-sm.lg:w-96
-      = yield
+      = render Common::CardComponent.new do
+        = yield

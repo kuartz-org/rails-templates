@@ -1,3 +1,5 @@
+h2.mt-6.text-xl.font-bold.text-slate-900 = t(".admin_center")
+
 .border-b.border-gray-200.bg-white.py-5
   .-ml-4.-mt-2.flex.flex-wrap.items-center.justify-between.sm:flex-nowrap
     .ml-4.mt-2

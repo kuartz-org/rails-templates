@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include Enumerize
+
   devise :invitable, :database_authenticatable, :recoverable, :rememberable, :validatable
+  enumerize :role, in: %i[admin user], default: :user, predicates: true
 
   validates :first_name, :last_name, presence: true
 

@@ -2,6 +2,7 @@ fr:
   admin:
     users:
       index:
+        admin_center: Centre d'administration
         add_user: Inviter un utilisateur
       new:
         new_user: Nouvel utilisateur
