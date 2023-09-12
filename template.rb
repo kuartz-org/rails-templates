@@ -8,6 +8,8 @@ end
 
 DEVISE = true
 CLEVER_CLOUD = true
+TOM_SELECT = true
+FLATPICKR = true
 
 template "Gemfile.tt", force: true
 template "Procfile.dev.tt", force: true
@@ -19,6 +21,8 @@ apply "_addons/modal/template.rb"
 apply "_addons/simple_form/template.rb"
 apply "_addons/devise/template.rb" if DEVISE
 apply "_addons/clever_cloud/template.rb" if CLEVER_CLOUD
+apply "_addons/tom_select/template.rb" if TOM_SELECT
+apply "_addons/flatpickr/template.rb" if FLATPICKR
 
 apply "db/template.rb"
 apply "config/template.rb"

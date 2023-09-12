@@ -7,3 +7,5 @@ template "app/views/profile/show.html.slim.tt"
 
 template "app/controllers/admin/users_controller.rb.tt"
 directory "app/views/admin/users"
+
+template "app/javascript/controllers/form_controller.js.tt"

@@ -56,6 +56,16 @@ SimpleForm.setup do |config|
       ba.use :input, class: "h-4 w-4 border-gray-300 text-primary-dark focus:ring-primary-dark", error_class: ""
     end
   end
+
+  config.wrappers :tom_select, tag: "div", class: "mb-6", error_class: "form-group-invalid",
+      valid_class: "form-group-valid" do |b|
+    b.use :html5
+    b.use :label, class: LABEL_CLASSES
+    b.use :input, data: { controller: "tom-select" }
+
+    b.use :full_error, wrap_with: { tag: "div", class: "block text-sm font-medium text-red-700 mt-1 max-w-fit" }
+    b.use :hint, wrap_with: { tag: "small", class: "block text-sm font-medium text-gray-700 mt-1" }
+  end
 end
 
 SimpleForm.setup do |config|

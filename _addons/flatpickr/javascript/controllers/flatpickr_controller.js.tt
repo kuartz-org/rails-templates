@@ -1,0 +1,23 @@
+import { Controller } from "@hotwired/stimulus"
+import Flatpickr from "flatpickr"
+import { French } from "flatpickr-french"
+
+// Connects to data-controller="flatpickr"
+export default class extends Controller {
+  static values = { settings: Object }
+
+  connect() {
+    const controller = this;
+
+    const globalOptions = {
+      locale: French,
+      altInput: true,
+
+      onClose: function(_selectedDates, _dateStr, _instance){
+        controller.dispatch("close")
+      }
+    }
+
+    Flatpickr(this.element, Object.assign(globalOptions, this.settingsValue));
+  }
+}
