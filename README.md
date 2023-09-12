@@ -11,5 +11,6 @@
 - [X] Sidekiq
 - [X] CleverCloud
 - [X] Modal
+- [X] Chart-js
 - [X] TomSelect
 - [X] Flatpickr

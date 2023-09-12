@@ -8,6 +8,7 @@ end
 
 DEVISE = true
 CLEVER_CLOUD = true
+CHART_JS = true
 TOM_SELECT = true
 FLATPICKR = true
 
@@ -21,6 +22,7 @@ apply "_addons/modal/template.rb"
 apply "_addons/simple_form/template.rb"
 apply "_addons/devise/template.rb" if DEVISE
 apply "_addons/clever_cloud/template.rb" if CLEVER_CLOUD
+apply "_addons/chart_js/template.rb" if CHART_JS
 apply "_addons/tom_select/template.rb" if TOM_SELECT
 apply "_addons/flatpickr/template.rb" if FLATPICKR
 
