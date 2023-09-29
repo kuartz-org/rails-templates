@@ -2,6 +2,15 @@
 
 ## Usage
 
+1. Install mailcatcher
+    ```bash
+    # For Linux
+    gem install mailcatcher
+
+    # For MacOS
+    gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"
+    ```
+
 1. Clone the components_template repo
     ```bash
     git clone git@github.com:kuartz-org/components_templates.git
@@ -14,7 +23,7 @@
 
 1. Create a new rails app using this template
     ```bash
-    rails new -d postgresql --css tailwind -m rails-template/template.rb CHANGE_THIS_WITH_APP_NAME
+    rails new -d postgresql --css tailwind -m rails-templates/template.rb CHANGE_THIS_WITH_APP_NAME
     ```
 
 ## Features
