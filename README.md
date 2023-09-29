@@ -1,17 +1,21 @@
 # Kuartz rails template
 
 ## Usage
-Clone this repo
 
-```bash
-git clone git@github.com:kuartz-org/rails-templates.git
-```
+1. Clone the components_template repo
+    ```bash
+    git clone git@github.com:kuartz-org/components_templates.git
+    ```
 
-Create a new rails app using this template
+1. Clone this repo
+    ```bash
+    git clone git@github.com:kuartz-org/rails-templates.git
+    ```
 
-```bash
-rails new -d postgresql --css tailwind -m rails-template/template.rb CHANGE_THIS_WITH_APP_NAME
-```
+1. Create a new rails app using this template
+    ```bash
+    rails new -d postgresql --css tailwind -m rails-template/template.rb CHANGE_THIS_WITH_APP_NAME
+    ```
 
 ## Features
 
