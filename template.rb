@@ -12,6 +12,7 @@ CHART_JS = true
 TOM_SELECT = true
 FLATPICKR = true
 TAILWIND_COLOR = true
+ACTION_POLICY = true
 
 template "Gemfile.tt", force: true
 template "Procfile.dev.tt", force: true
@@ -27,6 +28,7 @@ apply "_addons/chart_js/template.rb" if CHART_JS
 apply "_addons/tom_select/template.rb" if TOM_SELECT
 apply "_addons/flatpickr/template.rb" if FLATPICKR
 apply "_addons/tailwind_color/template.rb" if TAILWIND_COLOR
+apply "_addons/action_policy/template.rb" if ACTION_POLICY
 
 apply "db/template.rb"
 apply "config/template.rb"
